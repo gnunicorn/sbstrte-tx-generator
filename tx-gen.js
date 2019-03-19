@@ -22,8 +22,10 @@ const setupAccounts = () => {
 
 const random = n => Math.floor(Math.random() * Math.floor(n));
 
+const sleep = (secs) => new Promise(_ => setTimeout(_, secs * 1000));
+
 const main = async () => {
-	const N_TXS = 1000;
+	const N_TXS = 10000;
 
 	const api = await ApiPromise.create();
 	const accounts = setupAccounts();
@@ -46,6 +48,10 @@ const main = async () => {
 			nonces[src] += 1;
 			console.log('Transfer sent with hash', hash.toHex());
 		} catch {
+		}
+
+		if (i % 100 == 0) {
+			await sleep(3);
 		}
 	}
 }
