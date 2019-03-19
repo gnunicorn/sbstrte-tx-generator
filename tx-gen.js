@@ -23,7 +23,7 @@ const setupAccounts = () => {
 const random = n => Math.floor(Math.random() * Math.floor(n));
 
 const main = async () => {
-	const N_TXS = 1000000000;
+	const N_TXS = 1000;
 
 	const api = await ApiPromise.create();
 	const accounts = setupAccounts();
