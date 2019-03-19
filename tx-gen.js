@@ -50,8 +50,8 @@ const main = async () => {
 		} catch {
 		}
 
-		if (i % 100 == 0) {
-			await sleep(3);
+		if (i != 0 && i % 100 == 0) {
+			await sleep(4);
 		}
 	}
 }
