@@ -1,4 +1,4 @@
 - Checkout substrate at 7af4c9c9cd6b689db5bcba5b76edc18bca80c781
 - Start node with `./target/release/substrate --chain dev --validator --key Alice -d alice --block-construction-execution native --importing-execution native --other-execution native --syncing-execution native`
 - `npm install`
-- `node bench.js`
+- `node tx-gen.js`
