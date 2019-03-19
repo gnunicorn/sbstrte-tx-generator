@@ -39,11 +39,14 @@ const main = async () => {
 		const srcAcc = accounts[src];
 		const dstAddr = accounts[dst].address();
 
-		const transfer = api.tx.balances.transfer(dstAddr, 42);
-		const hash = await transfer.signAndSend(srcAcc, { nonce: nonces[src] });
-		nonces[src] += 1;
+		const transfer = api.tx.balances.transfer(dstAddr, random(1000));
 
-		console.log('Transfer sent with hash', hash.toHex());
+		try {
+			const hash = await transfer.signAndSend(srcAcc, { nonce: nonces[src] });
+			nonces[src] += 1;
+			console.log('Transfer sent with hash', hash.toHex());
+		} catch {
+		}
 	}
 }
 
